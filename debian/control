@@ -13,6 +13,10 @@ Package: google-android-build-tools-installer
 Architecture: i386 amd64
 Depends: wget,
          make | build-essential | dpkg-dev,
+         libgcc1 [i386],
+         libgcc1:i386 [amd64],
+         zlib1g [i386],
+         zlib1g:i386 [amd64],
          ${misc:Depends},
 Description: Build-tools for Google Android SDK (aapt, aidl, dexdump, dx)
  This package will download the binary Google Android build tools and create a
