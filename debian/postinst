@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+        mkdir -p /var/cache/google-android-build-tools-installer
+        cp /usr/share/google-android-build-tools-installer/Makefile \
+            /usr/share/google-android-build-tools-installer/build-tools_r20-linux.zip.md5 \
+            /usr/share/google-android-build-tools-installer/build-tools_r20-linux.zip.sha1 \
+            /usr/share/google-android-build-tools-installer/build-tools_r20-linux.zip.sha256 \
+            /var/cache/google-android-build-tools-installer/
+        make -C /var/cache/google-android-build-tools-installer/ install
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
+

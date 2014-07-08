@@ -1,0 +1,23 @@
+Source: google-android-build-tools-installer
+Section: contrib/devel
+Priority: optional
+Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
+Uploaders: Hans-Christoph Steiner <hans@eds.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.9.5
+Homepage: https://developer.android.com/sdk/index.html
+Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-build-tools-installer.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=android-tools/google-android-build-tools-installer.git
+
+Package: google-android-build-tools-installer
+Architecture: i386 amd64
+Depends: wget,
+         make | build-essential | dpkg-dev,
+         ${misc:Depends},
+Description: Build-tools for Google Android SDK (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.
+ .
+ WARNING: Installing this Debian package causes build-tools_r20-linux.zip to
+ be downloaded from developer.android.com. The End User License Agreement of
+ NITE modules is available at developer.android.com.

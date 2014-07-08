@@ -1,0 +1,4 @@
+debian/files
+debian/google-android-build-tools-installer/
+debian/google-android-build-tools-installer.debhelper.log
+debian/google-android-build-tools-installer.substvars
