@@ -18,10 +18,11 @@ Depends: wget,
          zlib1g [i386],
          zlib1g:i386 [amd64],
          ${misc:Depends},
-Description: Build-tools for Google Android SDK (aapt, aidl, dexdump, dx)
+Description: Google build tools for Android (aapt, aidl, dexdump, dx)
  This package will download the binary Google Android build tools and create a
- Debian package.
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
  .
  WARNING: Installing this Debian package causes build-tools_r20-linux.zip to
- be downloaded from developer.android.com. The End User License Agreement of
- NITE modules is available at developer.android.com.
+ be downloaded from dl-ssl.google.com. The End User License Agreement of this
+ binary package is available at developer.android.com.
