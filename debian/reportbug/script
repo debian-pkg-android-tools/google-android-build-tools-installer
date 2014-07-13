@@ -10,9 +10,9 @@ take_a_peek() {
 
 	dpkg --print-architecture 2>&1 | sed -e "s,^,Architecture: ,"
 
-	dpkg-query -W -f='${Version}\n' google-android-build-tools 2>&1 | sed -e "s,^,Package version: ,"
+	dpkg-query -W -f='${Version}\n' google-android-build-tools-installer 2>&1 | sed -e "s,^,Package version: ,"
 
-	ls -lR /var/cache/google-android-build-tools/* 2>&1 | sed -e "s,^,\t,"
+	ls -lR /var/cache/google-android-build-tools-installer/* 2>&1 | sed -e "s,^,\t,"
 }
 
 take_a_peek >&3 2>&1
