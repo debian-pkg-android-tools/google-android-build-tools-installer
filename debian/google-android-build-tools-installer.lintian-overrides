@@ -1,0 +1,4 @@
+# The files in the package itself are indeed not arch-dependent, but this
+# package is a downloader script like the Adobe Flash installer, and the
+# binaries that it downloads only run in i386 and amd64.
+google-android-build-tools-installer: package-contains-no-arch-dependent-files
