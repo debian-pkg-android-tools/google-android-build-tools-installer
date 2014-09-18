@@ -7,6 +7,7 @@ PKG_SOURCE_URL:=https://dl-ssl.google.com/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-build-tools-installer
 UNPACK_DIR=$(DL_DIR)/android-4.4W
+DOC_DIR=/usr/share/doc/google-android-build-tools
 
 all: $(DL_DIR)/$(UNPACK_DIR)/aapt
 	sed -i 's,^libdir=.*,libdir=/usr/share/java,' $(UNPACK_DIR)/dx
@@ -15,7 +16,8 @@ install: all
 	install -d -m0755 /usr/share/java
 	install -m0644 $(UNPACK_DIR)/lib/dx.jar /usr/share/java/
 	install -d -m0755 /usr/bin
-	install -m0755 $(UNPACK_DIR)/bcc_compat \
+	install -m0755 \
+		$(UNPACK_DIR)/bcc_compat \
 		$(UNPACK_DIR)/arm-linux-androideabi-ld \
 		$(UNPACK_DIR)/aapt \
 		$(UNPACK_DIR)/aidl \
@@ -29,13 +31,15 @@ install: all
 	install -d -m0755 /usr/lib/
 	for f in libLLVM.so libbcinfo.so libbcc.so libclang.so; do \
 		test -e /usr/bin/$$f || install -m0644 $(UNPACK_DIR)/$$f /usr/lib/; done
-	install -d -m0755 /usr/share/doc/google-android-build-tools
-	gzip -9 $(UNPACK_DIR)/NOTICE.txt > /usr/share/doc/google-android-build-tools/copyright.gz
-	install -m0644 $(UNPACK_DIR)/source.properties /usr/share/doc/google-android-build-tools/
-
-uninstall:
-	rm -f /usr/share/java/dx.jar
-	rm -f /usr/bin/bcc_compat \
+	install -d -m0755 $(DOC_DIR)
+	gzip -9 $(UNPACK_DIR)/NOTICE.txt > $(DOC_DIR)/copyright.gz
+	install -m0644 $(UNPACK_DIR)/source.properties $(DOC_DIR)/
+	for f in \
+		$(DOC_DIR) \
+		$(DOC_DIR)/copyright.gz \
+		$(DOC_DIR)/source.properties \
+		/usr/bin \
+		/usr/bin/bcc_compat \
 		/usr/bin/arm-linux-androideabi-ld \
 		/usr/bin/aapt \
 		/usr/bin/aidl \
@@ -45,18 +49,14 @@ uninstall:
 		/usr/bin/llvm-rs-cc \
 		/usr/bin/mipsel-linux-android-ld \
 		/usr/bin/zipalign \
-	rm -f /usr/lib/libLLVM.so \
+		/usr/lib \
+		/usr/lib/libLLVM.so \
 		/usr/lib/libbcinfo.so \
 		/usr/lib/libbcc.so \
-		/usr/lib/libclang.so
-	rm -f /usr/share/doc/google-android-build-tools/copyright.gz
-	rm -f /usr/share/doc/google-android-build-tools/source.properties
-	for d in `find \
-			/usr/bin \
-			/usr/share/java \
-			/usr/share/doc/google-android-build-tools \
-			/usr/share/doc -type d -empty`; do \
-		test -d $$d && rmdir $$d || true ; done
+		/usr/lib/libclang.so \
+		/usr/share/java \
+		/usr/share/java/dx.jar; do echo $$f; done \
+	 >> /var/lib/dpkg/info/google-android-build-tools-installer.list
 
 $(DL_DIR)/$(UNPACK_DIR)/aapt: $(DL_DIR)/$(PKG_SOURCE)
 	cd $(DL_DIR) && unzip $(PKG_SOURCE)
