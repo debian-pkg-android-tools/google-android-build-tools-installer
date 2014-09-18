@@ -1,3 +1,11 @@
+google-android-build-tools-installer (20.0.0.1) unstable; urgency=low
+
+  * add Conflicts: for non-Android packages, and Replaces: for Android ones
+  * let dpkg handle the uninstall process
+  * config to use "Multi-Arch: foreign" to handle installing on amd64
+
+ -- Hans-Christoph Steiner <hans@eds.org>  Thu, 18 Sep 2014 14:30:27 -0400
+
 google-android-build-tools-installer (20.0.0.0) unstable; urgency=low
 
   * First release (Closes: #754210)
