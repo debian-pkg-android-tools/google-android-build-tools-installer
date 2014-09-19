@@ -32,7 +32,7 @@ install: all
 	for f in libLLVM.so libbcinfo.so libbcc.so libclang.so; do \
 		test -e /usr/bin/$$f || install -m0644 $(UNPACK_DIR)/$$f /usr/lib/; done
 	install -d -m0755 $(DOC_DIR)
-	gzip -9 $(UNPACK_DIR)/NOTICE.txt > $(DOC_DIR)/copyright.gz
+	gzip -9 --stdout $(UNPACK_DIR)/NOTICE.txt > $(DOC_DIR)/copyright.gz
 	install -m0644 $(UNPACK_DIR)/source.properties $(DOC_DIR)/
 	for f in \
 		$(DOC_DIR) \
@@ -59,7 +59,7 @@ install: all
 	 >> /var/lib/dpkg/info/google-android-build-tools-installer.list
 
 $(DL_DIR)/$(UNPACK_DIR)/aapt: $(DL_DIR)/$(PKG_SOURCE)
-	cd $(DL_DIR) && unzip $(PKG_SOURCE)
+	cd $(DL_DIR) && unzip -ou $(PKG_SOURCE)
 
 $(DL_DIR)/$(PKG_SOURCE): $(DL_DIR)
 	cd $(DL_DIR) && \
