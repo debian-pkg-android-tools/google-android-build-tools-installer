@@ -19,6 +19,7 @@ Depends: wget,
          ${misc:Depends},
 Conflicts: aapt, zipalign, libclang-dev, dx
 Replaces: aapt, zipalign
+Provides: aapt, zipalign
 Description: Google build tools for Android (aapt, aidl, dexdump, dx)
  This package will download the binary Google Android build tools and create a
  Debian package.  The build tools are used in the process of assembling the
