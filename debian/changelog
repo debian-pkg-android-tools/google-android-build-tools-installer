@@ -1,3 +1,10 @@
+google-android-build-tools-installer (20.0.0.2) unstable; urgency=medium
+
+  [Reiner Herrmann]
+  * added unzip and ca-certificates to Depends (Closes: #770597)
+
+ -- Hans-Christoph Steiner <hans@eds.org>  Wed, 26 Nov 2014 13:55:29 +0100
+
 google-android-build-tools-installer (20.0.0.1) unstable; urgency=low
 
   * add Conflicts: for non-Android packages, and Replaces: for Android ones

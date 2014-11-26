@@ -16,6 +16,8 @@ Depends: wget,
          make | build-essential | dpkg-dev,
          zlib1g,
          libstdc++6,
+         unzip,
+         ca-certificates,
          ${misc:Depends},
 Conflicts: aapt, zipalign, libclang-dev, dx
 Replaces: aapt, zipalign
