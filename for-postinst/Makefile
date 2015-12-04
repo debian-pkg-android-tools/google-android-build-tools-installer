@@ -26,6 +26,7 @@ install: all
 		$(UNPACK_DIR)/i686-linux-android-ld \
 		$(UNPACK_DIR)/llvm-rs-cc \
 		$(UNPACK_DIR)/mipsel-linux-android-ld \
+		$(UNPACK_DIR)/split-select \
 		$(UNPACK_DIR)/zipalign \
 		/usr/bin/
 	install -d -m0755 /usr/lib/
@@ -48,6 +49,7 @@ install: all
 		/usr/bin/i686-linux-android-ld \
 		/usr/bin/llvm-rs-cc \
 		/usr/bin/mipsel-linux-android-ld \
+		/usr/bin/split-select \
 		/usr/bin/zipalign \
 		/usr/lib \
 		/usr/lib/libLLVM.so \
