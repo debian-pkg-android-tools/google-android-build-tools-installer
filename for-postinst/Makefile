@@ -17,10 +17,10 @@ install: all
 	install -m0644 $(UNPACK_DIR)/lib/dx.jar /usr/share/java/
 	install -d -m0755 /usr/bin
 	install -m0755 \
-		$(UNPACK_DIR)/bcc_compat \
-		$(UNPACK_DIR)/arm-linux-androideabi-ld \
 		$(UNPACK_DIR)/aapt \
 		$(UNPACK_DIR)/aidl \
+		$(UNPACK_DIR)/arm-linux-androideabi-ld \
+		$(UNPACK_DIR)/bcc_compat \
 		$(UNPACK_DIR)/dexdump \
 		$(UNPACK_DIR)/dx \
 		$(UNPACK_DIR)/i686-linux-android-ld \
@@ -40,10 +40,10 @@ install: all
 		$(DOC_DIR)/copyright.gz \
 		$(DOC_DIR)/source.properties \
 		/usr/bin \
-		/usr/bin/bcc_compat \
-		/usr/bin/arm-linux-androideabi-ld \
 		/usr/bin/aapt \
 		/usr/bin/aidl \
+		/usr/bin/arm-linux-androideabi-ld \
+		/usr/bin/bcc_compat \
 		/usr/bin/dexdump \
 		/usr/bin/dx \
 		/usr/bin/i686-linux-android-ld \
@@ -52,10 +52,10 @@ install: all
 		/usr/bin/split-select \
 		/usr/bin/zipalign \
 		/usr/lib \
-		/usr/lib/libLLVM.so \
-		/usr/lib/libbcinfo.so \
 		/usr/lib/libbcc.so \
+		/usr/lib/libbcinfo.so \
 		/usr/lib/libclang.so \
+		/usr/lib/libLLVM.so \
 		/usr/share/java \
 		/usr/share/java/dx.jar; do echo $$f; done \
 	 >> /var/lib/dpkg/info/google-android-build-tools-installer.list
