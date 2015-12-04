@@ -1,6 +1,6 @@
 
 PKG_NAME:=build-tools
-PKG_VERSION:=20
+PKG_VERSION:=23.0.2
 
 PKG_SOURCE:=build-tools_r${PKG_VERSION}-linux.zip
 PKG_SOURCE_URL:=https://dl.google.com/android/repository/${PKG_SOURCE}
