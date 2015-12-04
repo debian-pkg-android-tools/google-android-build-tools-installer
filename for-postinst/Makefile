@@ -3,7 +3,7 @@ PKG_NAME:=build-tools
 PKG_VERSION:=20
 
 PKG_SOURCE:=build-tools_r${PKG_VERSION}-linux.zip
-PKG_SOURCE_URL:=https://dl-ssl.google.com/android/repository/${PKG_SOURCE}
+PKG_SOURCE_URL:=https://dl.google.com/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-build-tools-installer
 UNPACK_DIR=$(DL_DIR)/android-4.4W
@@ -64,9 +64,7 @@ $(DL_DIR)/$(UNPACK_DIR)/aapt: $(DL_DIR)/$(PKG_SOURCE)
 $(DL_DIR)/$(PKG_SOURCE): $(DL_DIR)
 	cd $(DL_DIR) && \
 		wget --continue $(PKG_SOURCE_URL)
-	md5sum -c $(PKG_SOURCE).md5
 	sha1sum -c $(PKG_SOURCE).sha1
-	sha256sum -c $(PKG_SOURCE).sha256
 
 $(DL_DIR):
 	mkdir $(DL_DIR)
