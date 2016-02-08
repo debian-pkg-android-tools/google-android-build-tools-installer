@@ -6,7 +6,7 @@ PKG_SOURCE:=build-tools_r${PKG_VERSION}-linux.zip
 PKG_SOURCE_URL:=https://dl.google.com/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-build-tools-installer
-UNPACK_DIR=$(DL_DIR)/android-4.4W
+UNPACK_DIR=$(DL_DIR)/android-6.0
 DOC_DIR=/usr/share/doc/google-android-build-tools
 
 all: $(DL_DIR)/$(UNPACK_DIR)/aapt
@@ -30,8 +30,8 @@ install: all
 		$(UNPACK_DIR)/zipalign \
 		/usr/bin/
 	install -d -m0755 /usr/lib/
-	for f in libLLVM.so libbcinfo.so libbcc.so libclang.so; do \
-		test -e /usr/bin/$$f || install -m0644 $(UNPACK_DIR)/$$f /usr/lib/; done
+	for f in lib/libLLVM.so lib/libbcinfo.so lib/libbcc.so lib/libclang.so; do \
+		test -e /usr/lib/$$f || install -m0644 $(UNPACK_DIR)/$$f /usr/lib/; done
 	install -d -m0755 $(DOC_DIR)
 	gzip -9 --stdout $(UNPACK_DIR)/NOTICE.txt > $(DOC_DIR)/copyright.gz
 	install -m0644 $(UNPACK_DIR)/source.properties $(DOC_DIR)/
