@@ -1,5 +1,5 @@
 PKG_NAME:=build-tools
-PKG_VERSION:=23.0.2
+PKG_VERSION:=23.0.3
 
 PKG_SOURCE:=build-tools_r${PKG_VERSION}-linux.zip
 PKG_SOURCE_URL:=http://${DL_MIRROR}/android/repository/${PKG_SOURCE}
