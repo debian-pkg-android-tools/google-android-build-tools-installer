@@ -64,7 +64,7 @@ $(DL_DIR)/$(UNPACK_DIR)/aapt: $(DL_DIR)/$(PKG_SOURCE)
 
 $(DL_DIR)/$(PKG_SOURCE): $(DL_DIR)
 	cd $(DL_DIR) && \
-		wget --continue $(PKG_SOURCE_URL)
+		su nobody -s /bin/sh -c "wget --continue $(PKG_SOURCE_URL)"
 	sha1sum -c $(PKG_SOURCE).sha1
 
 $(DL_DIR):

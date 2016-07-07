@@ -9,7 +9,7 @@ db_get google-android-build-tools-installer/mirror
 
 case "$1" in
     configure)
-        mkdir -p /var/cache/google-android-build-tools-installer
+        install -d -m0700 -o nobody -g nogroup /var/cache/google-android-build-tools-installer
         cp /usr/share/google-android-build-tools-installer/Makefile \
             /usr/share/google-android-build-tools-installer/build-tools_r23.0.3-linux.zip.sha1 \
             /var/cache/google-android-build-tools-installer/
