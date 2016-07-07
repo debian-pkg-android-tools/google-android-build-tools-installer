@@ -1,3 +1,10 @@
+google-android-build-tools-installer (23.0.2.2) unstable; urgency=medium
+
+  * Add Mirrors choosing feature with debconf
+  * Description update
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Thu, 07 Jul 2016 15:26:33 +0000
+
 google-android-build-tools-installer (23.0.2.1) unstable; urgency=medium
 
   [ Remi Vanicat ]

@@ -2,9 +2,10 @@ Source: google-android-build-tools-installer
 Section: contrib/devel
 Priority: optional
 Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
-Uploaders: Hans-Christoph Steiner <hans@eds.org>
+Uploaders: Hans-Christoph Steiner <hans@eds.org>,
+           Mouaad Aallam <Mouaad@Aallam.com>
 Build-Depends: debhelper (>= 5)
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: https://developer.android.com/sdk/index.html
 Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-build-tools-installer.git
 Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-build-tools-installer.git
@@ -18,6 +19,8 @@ Depends: wget,
          libstdc++6,
          unzip,
          ca-certificates,
+         debconf,
+         po-debconf,
          ${misc:Depends},
 Conflicts: aapt, zipalign, libclang-dev, dx
 Replaces: aapt, zipalign
@@ -27,6 +30,7 @@ Description: Google build tools for Android (aapt, aidl, dexdump, dx)
  Debian package.  The build tools are used in the process of assembling the
  java code into the APK package.  They can also be useful for inspecting APKs.
  .
- WARNING: Installing this Debian package causes build-tools_r20-linux.zip to
- be downloaded from dl-ssl.google.com. The End User License Agreement of this
- binary package is available at developer.android.com.
+ WARNING: Installing this Debian package causes build-tools_r23.0.2-linux.zip to
+ be downloaded from dl-ssl.google.com and/or mirrors.neusoft.edu.cn. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
