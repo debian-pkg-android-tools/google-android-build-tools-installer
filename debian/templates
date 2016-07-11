@@ -1,6 +1,6 @@
 Template: google-android-build-tools-installer/mirror
 Type: select
-Choices: dl-ssl.google.com, mirrors.neusoft.edu.cn
-Default: dl-ssl.google.com
+Choices: https://dl.google.com, http://mirrors.neusoft.edu.cn, http://android-mirror.bugly.qq.com:8080
+Default: https://dl.google.com
 _Description: Mirror to download Google's Android Build Tools ?
  Please select your prefered mirror to download Google's Android Build Tools from.

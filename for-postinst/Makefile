@@ -2,7 +2,7 @@ PKG_NAME:=build-tools
 PKG_VERSION:=23.0.3
 
 PKG_SOURCE:=build-tools_r${PKG_VERSION}-linux.zip
-PKG_SOURCE_URL:=http://${DL_MIRROR}/android/repository/${PKG_SOURCE}
+PKG_SOURCE_URL:=${DL_MIRROR}/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-build-tools-installer
 UNPACK_DIR=$(DL_DIR)/android-6.0
