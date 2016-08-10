@@ -3,6 +3,10 @@ google-android-build-tools-installer (23.0.3.0) unstable; urgency=medium
   * Add mirrors choosing feature with debconf shared template
   * Description update
   * update to latest upstream binary
+  * d/compat: update compat version to 9
+  * d/control: update build-depends debhelper to >= 9
+  * d/*.lintian-overrides: remove unused lintian override and update it
+  * Add Indonesian, Portuguese and German PO translation files
 
  -- Mouaad Aallam <Mouaad@Aallam.com>  Thu, 07 Jul 2016 15:26:33 +0000
 
