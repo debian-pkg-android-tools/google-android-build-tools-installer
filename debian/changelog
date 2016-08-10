@@ -1,4 +1,4 @@
-google-android-build-tools-installer (23.0.3.0) unstable; urgency=medium
+google-android-build-tools-installer (23.0.3) unstable; urgency=medium
 
   * Add mirrors choosing feature with debconf shared template
   * Description update
